@@ -29,7 +29,7 @@ $idd = join(',',$arr); //array to string convert
 // print_r($idd);
 
 // GET DATA > order number-date, shipped date, comment, status
-$query = "SELECT `orderNumber`, `orderDate`, `shippedDate`, `comments`, `status` FROM `orders` WHERE customerNumber = '$idd'";
+$query = "SELECT `orderNumber`, `orderDate`, `shippedDate`, `comments`, `status` FROM `orders` WHERE customerNumber IN ($idd)";
 $matchedorders = $adaptervar->fetchAll($query);
 // print_r($matchedorders);
 
